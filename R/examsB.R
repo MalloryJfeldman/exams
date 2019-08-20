@@ -1,5 +1,5 @@
 ## workhorse function for compiling (collections of) exercises
-exams <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
+examsB <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
   inputs = NULL, header = list(Date = Sys.Date()), name = NULL,
   quiet = TRUE, edir = NULL, tdir = NULL, control = NULL)
 {  
