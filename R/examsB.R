@@ -19,7 +19,7 @@ examsB <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
   dir_temp <- if(is.null(tdir)) tempfile() else tdir
   if(!file.exists(dir_temp) && !dir.create(dir_temp))
     stop(gettextf("Cannot create temporary work directory '%s'.", dir_temp))
-  dir_pkg <- find.package("exams")
+  dir_pkg <- find.package("examsB")
   
   ## number of available exercises in each element of 'file'
   ## and number of selected samples per element
@@ -77,14 +77,14 @@ examsB <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
     template_path[template_path == file.path(dir_pkg, "tex", "myexam2.tex")] <- file.path(dir_pkg, "tex", "oexam.tex")
     warning(paste(strwrap(paste(
       "The template myexam2.tex has been adapted to exams2pdf() and is not fully compatible",
-      "with exams() anymore. Template oexam.tex used instead."
+      "with examsB() anymore. Template oexam.tex used instead."
       ), exdent = 2), collapse = "\n"))
   }
   if(file.path(dir_pkg, "tex", "solution.tex") %in% template_path) {
     template_path[template_path == file.path(dir_pkg, "tex", "solution.tex")] <- file.path(dir_pkg, "tex", "osolution.tex")
     warning(paste(strwrap(paste(
       "The template solution.tex has been adapted to exams2pdf() and is not fully compatible",
-      "with exams() anymore. Template osolution.tex used instead."
+      "with examsB() anymore. Template osolution.tex used instead."
       ), exdent = 2), collapse = "\n"))
   }
 
