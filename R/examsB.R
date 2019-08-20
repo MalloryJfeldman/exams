@@ -1,5 +1,5 @@
 ## workhorse function for compiling (collections of) exercises
-examsB <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
+exams <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
   inputs = NULL, header = list(Date = Sys.Date()), name = NULL,
   quiet = TRUE, edir = NULL, tdir = NULL, control = NULL)
 {  
@@ -19,7 +19,7 @@ examsB <- function(file, n = 1, nsamp = NULL, dir = NULL, template = "plain",
   dir_temp <- if(is.null(tdir)) tempfile() else tdir
   if(!file.exists(dir_temp) && !dir.create(dir_temp))
     stop(gettextf("Cannot create temporary work directory '%s'.", dir_temp))
-  dir_pkg <- find.package("examsB")
+  dir_pkg <- find.package("exams")
   
   ## number of available exercises in each element of 'file'
   ## and number of selected samples per element
